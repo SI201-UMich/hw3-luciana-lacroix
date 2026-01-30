@@ -156,7 +156,19 @@ class CouponDispenser:
             print("Empty")
             return
         
-        
+        i = 0
+
+        while i < len(self.coupon_cards):
+            count = 0
+
+            j = 0
+            while j < len(self.issued_indices):
+                if self.issued_indices[j] == i:
+                    count = count + 1
+                j = j + 1
+
+            print(self.coupon_cards[i] + "distribution count: " + str(count) + ".")
+            i = i + 1
         pass
 
 
