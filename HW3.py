@@ -152,7 +152,11 @@ class CouponDispenser:
         Returns:
             None
         """
-        # TODO: Implement per instructions
+        if len(Self.issued_indices) == 0:
+            print("Empty")
+            return
+        
+        
         pass
 
 
