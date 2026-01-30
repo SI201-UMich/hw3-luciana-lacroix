@@ -103,7 +103,10 @@ class CouponDispenser:
 
         Reminder: Use lists only (no dictionaries).
         """
-        # TODO: Implement per instructions 
+        round_number = 1
+
+        while True:
+            user_input = input("Round" + str(round_number) + "Enter a name (if multiple seperate by comma), or type 'show' or 'exit': ")
         pass
 
     def tally_distribution(self):
