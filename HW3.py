@@ -107,6 +107,34 @@ class CouponDispenser:
 
         while True:
             user_input = input("Round" + str(round_number) + "Enter a name (if multiple seperate by comma), or type 'show' or 'exit': ")
+
+            if user_input == "exit":
+                print("Goodbye!")
+                break
+
+            elif user_input == "show":
+                i = 0
+                while i < len(self.customer_roster):
+                    name = self.customer_roster[i]
+                    coupon_index = self.issued_indices[i]
+                    coupon = self.coupon_cards[coupon_index]
+                    print(name + ": " + coupon)
+                    i = i + 1
+            
+            else:
+                pieces = user_input.split(",")
+
+                i = 0
+                while i < len(pieces):
+                    name = pieces[i].strip()
+
+                    if name != "":
+                        result = self.issue_coupon(name)
+                        print(result)
+
+                    i = i + 1
+
+            round_number = round_number + 1
         pass
 
     def tally_distribution(self):
