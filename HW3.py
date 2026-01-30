@@ -84,6 +84,8 @@ class CouponDispenser:
 
         self.costomer_roster.append(name)
         self.issued_indices.append(coupon_index)
+
+        return self.coupon_cards[coupon_index]
         pass
 
     def distribute_session(self):
