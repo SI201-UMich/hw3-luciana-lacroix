@@ -1,12 +1,15 @@
 # Name:Luciana Lacroix
 # Student ID:3867 8419
 # Email:Lucianal@umich.edu
-# Who or what you worked with on this homework (including generative AI like ChatGPT):
-# If you worked with generative AI also add a statement for how you used it.
+# Who or what you worked with on this homework (including generative AI like ChatGPT): Used AI for help in debussing the portion regarding issue_coupon, helped me figure out to use random.randrage to pull a random coupon.
+# For distrubute session func, AI suggested me to use while and if loops to make my function. And lastly, I couldn't figure out how to make
+# the print statement be like the homework so I asked AI what was wrong with the initial print statement to fix the spacing, etc. 
+# If you worked with generative AI also add a statement for how you used it -> Already explained above
 # e.g.:
 # Asked ChatGPT hints for debugging and suggesting the general structure of the code
 # Did your use of GenAI on this assignment align with your goals and guidelines in 
-#    your Gen AI contract? If not, why?
+#    your Gen AI contract? If not, why? I believe so! I used it to debugg and ask suggestions on how to fix/start a code instead of making
+# it do my work. I really find it helpful, especially when I just need a hint on how to start, then from there I can figure it out. 
 
 import random
 import io
@@ -82,7 +85,7 @@ class CouponDispenser:
             i = i + 1
         coupon_index = random.randrange(len(self.coupon_cards))
 
-        self.costomer_roster.append(name)
+        self.customer_roster.append(name)
         self.issued_indices.append(coupon_index)
 
         return self.coupon_cards[coupon_index]
@@ -106,7 +109,7 @@ class CouponDispenser:
         round_number = 1
 
         while True:
-            user_input = input("Round" + str(round_number) + "Enter a name (if multiple seperate by comma), or type 'show' or 'exit': ")
+            user_input = input("Round " + str(round_number) + " - Enter a name (or a comma-seperated list), or type 'show' or 'exit': ")
 
             if user_input == "exit":
                 print("Goodbye!")
@@ -152,7 +155,7 @@ class CouponDispenser:
         Returns:
             None
         """
-        if len(Self.issued_indices) == 0:
+        if len(self.issued_indices) == 0:
             print("Empty")
             return
         
@@ -188,9 +191,9 @@ def main():
     ]
 
     # Uncomment the lines below as you implement each function.
-    # box = CouponDispenser(coupon_cards)
-    # box.distribute_session()
-    # box.tally_distribution()
+    box = CouponDispenser(coupon_cards)
+    box.distribute_session()
+    box.tally_distribution()
     pass
 
 
